@@ -57,6 +57,7 @@ class MyProgram(QMainWindow, Ui_JEOPARDYGAMEMAKER):
         self.height_window = self.screenRect.height()
         self.width_window = self.screenRect.width()
         self.database = DataBase("application files/users_db.sqlite")
+        self.database.create_database()
         self.text_in_question_label = True
         self.count_of_questions_used = 0
         self.btn_end_game.clicked.connect(self.go_to_initial_window)

@@ -6,6 +6,26 @@ class DataBase:
         self.connection = sqlite3.connect(file_name)
         self.cursor = self.connection.cursor()
 
+    def create_database(self):
+        self.cursor.execute("""CREATE TABLE IF NOT EXISTS games (
+                                            id INTEGER PRIMARY KEY
+                                                AUTOINCREMENT
+                                                NOT NULL
+                                                UNIQUE,
+                                            count INTEGER NOT NULL,
+                                            wins INTEGER NOT NULL,
+                                            scores INTEGER NOT NULL
+                                            );""")
+
+        self.cursor.execute("""CREATE TABLE IF NOT EXISTS users (
+                                            id INTEGER PRIMARY KEY
+                                                AUTOINCREMENT
+                                                NOT NULL
+                                                UNIQUE,
+                                            name TEXT NOT NULL
+                                            );""")
+        self.connection.commit()
+
     def add_players(self, list_of_players):
         players = [name[0] for name in self.cursor.execute("""SELECT name FROM users""").fetchall()]
         for player in list_of_players:
