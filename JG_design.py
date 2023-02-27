@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_JEOPARDYGAMEMAKER(object):
     def setupUi(self, JEOPARDYGAMEMAKER):
         JEOPARDYGAMEMAKER.setObjectName("JEOPARDYGAMEMAKER")
-        JEOPARDYGAMEMAKER.resize(1086, 575)
+        JEOPARDYGAMEMAKER.resize(1094, 575)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -25,7 +25,7 @@ class Ui_JEOPARDYGAMEMAKER(object):
         JEOPARDYGAMEMAKER.setStyleSheet("* {\n"
 "    font-size: 30px;\n"
 "    background-color:#defff9;\n"
-"    font:15pt\"Comfortaa\";\n"
+"    font:25pt\"Comfortaa\";\n"
 "}\n"
 "\n"
 "QPushButton {\n"
@@ -60,7 +60,7 @@ class Ui_JEOPARDYGAMEMAKER(object):
         self.centralwidget = QtWidgets.QWidget(JEOPARDYGAMEMAKER)
         font = QtGui.QFont()
         font.setFamily("Comfortaa")
-        font.setPointSize(15)
+        font.setPointSize(25)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
@@ -77,7 +77,9 @@ class Ui_JEOPARDYGAMEMAKER(object):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.logo = QtWidgets.QLabel(self.main)
         self.logo.setMinimumSize(QtCore.QSize(1050, 0))
-        self.logo.setText("")
+        self.logo.setStyleSheet("* {color: rgb(51, 78, 255);\n"
+"    font: 48pt \"Arial Rounded MT Bold\";\n"
+"}")
         self.logo.setPixmap(QtGui.QPixmap("../../Downloads/123/image2.png"))
         self.logo.setAlignment(QtCore.Qt.AlignCenter)
         self.logo.setObjectName("logo")
@@ -92,7 +94,7 @@ class Ui_JEOPARDYGAMEMAKER(object):
         self.btn_start.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setFamily("Comfortaa")
-        font.setPointSize(15)
+        font.setPointSize(25)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
@@ -282,7 +284,7 @@ class Ui_JEOPARDYGAMEMAKER(object):
         self.players_layout.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Comfortaa")
-        font.setPointSize(15)
+        font.setPointSize(25)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
@@ -459,6 +461,7 @@ class Ui_JEOPARDYGAMEMAKER(object):
     def retranslateUi(self, JEOPARDYGAMEMAKER):
         _translate = QtCore.QCoreApplication.translate
         JEOPARDYGAMEMAKER.setWindowTitle(_translate("JEOPARDYGAMEMAKER", "JEOPARDY GAMEMAKER"))
+        self.logo.setText(_translate("JEOPARDYGAMEMAKER", "\"JEOPARDY\" GAMEMAKER"))
         self.btn_start.setText(_translate("JEOPARDYGAMEMAKER", "🎮 Играть"))
         self.btn_standings.setText(_translate("JEOPARDYGAMEMAKER", "🏆 Турнирная таблица"))
         self.lbl_question_about_time.setText(_translate("JEOPARDYGAMEMAKER", "Время на вопрос (в секундах):"))

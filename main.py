@@ -219,7 +219,7 @@ class MyProgram(QMainWindow, Ui_JEOPARDYGAMEMAKER):
         function_response = handler.processing()
         if function_response != "Error":
             themes, self.questions_pack = function_response
-            self.btn_input_file.setText(self.xlsx_path)
+            self.btn_input_file.setText(self.xlsx_path.split("/")[-1])
             for index in range(len(themes)):
                 lbl = QLabel(self.themes_layout)
                 lbl.setText(themes[index])
